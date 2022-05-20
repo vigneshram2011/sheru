@@ -19,8 +19,8 @@ class HomeView extends GetView<HomeController> {
               child: Text('Show Snackbar'),
               onPressed: () {
                 Get.snackbar(
-                  'My name is Sheru.',
-                  'My master is Vignesh.',
+                  'My name is Sheru the tiger.',
+                  'My master name is Vignesh.',
                   colorText: Colors.deepPurple,
                   backgroundColor: Colors.greenAccent,
                   borderRadius: 30,
