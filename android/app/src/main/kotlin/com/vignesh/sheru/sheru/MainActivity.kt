@@ -1,4 +1,4 @@
-package com.vignesh.sheru.sheru
+package com.chilwell.demo.getx
 
 import io.flutter.embedding.android.FlutterActivity
 

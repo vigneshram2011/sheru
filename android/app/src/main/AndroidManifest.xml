@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.vignesh.sheru.sheru">
+    package="com.chilwell.demo.getx">
    <application
         android:label="sheru"
         android:name="${applicationName}"
