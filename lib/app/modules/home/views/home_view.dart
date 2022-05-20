@@ -8,7 +8,7 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Snackbar Testing'),
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.green,
         centerTitle: true,
       ),
       body: Center(
@@ -18,15 +18,26 @@ class HomeView extends GetView<HomeController> {
             ElevatedButton(
               child: Text('Show Snackbar'),
               onPressed: () {
-                Get.snackbar('My name is Sheru.', 'My master is Vignesh.',
-                    colorText: Colors.white,
-                    backgroundColor: Colors.black,
-                    borderRadius: 20,
-                    borderColor: Colors.pinkAccent);
+                Get.snackbar(
+                  'My name is Sheru.',
+                  'My master is Vignesh.',
+                  colorText: Colors.deepPurple,
+                  backgroundColor: Colors.greenAccent,
+                  borderRadius: 30,
+                  maxWidth: 700,
+                  animationDuration: Duration(seconds: 4),
+                  backgroundGradient: LinearGradient(
+                    colors: [Colors.yellow, Colors.red],
+                    ),
+                  boxShadows: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 20,
+                      offset: Offset(10, 10),
+                    ),
+                  ],
+                );
               },
-              style: ElevatedButton.styleFrom(
-                primary: Colors.lightGreen,
-              ),
             )
           ],
         ),
