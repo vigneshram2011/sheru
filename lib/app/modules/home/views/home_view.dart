@@ -38,7 +38,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ],
                   forwardAnimationCurve: Curves.bounceInOut,
-                  duration: Duration(seconds: 10),
+                  duration: Duration(seconds: 20),
                   reverseAnimationCurve: Curves.bounceInOut,
                   icon: Icon(
                     Icons.favorite,
