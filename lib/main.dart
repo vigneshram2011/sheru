@@ -60,6 +60,7 @@ class MyApp extends StatelessWidget {
                       onCancel: () {},
                       onConfirm: () {},
                       buttonColor: Colors.greenAccent,
+                      barrierDismissible: false,
                     );
                   },
                 )
