@@ -56,7 +56,13 @@ class MyApp extends StatelessWidget {
                       ),
                     );
                   },
-                )
+                ),
+                ElevatedButton(
+                  child: Text("Change Theme"),
+                  onPressed: () {
+                    Get.changeTheme(ThemeData.dark());
+                  },
+                ),
               ],
             ),
           )),
