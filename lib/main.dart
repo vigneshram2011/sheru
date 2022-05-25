@@ -7,10 +7,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: "Dialog",
+      title: "Bottom Sheet",
       home: Scaffold(
           appBar: AppBar(
-            title: Text("Dialog"),
+            title: Text("Bottom Sheet"),
             backgroundColor: Colors.green,
             centerTitle: true,
           ),
@@ -20,47 +20,40 @@ class MyApp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  child: Text("Show Dialog"),
+                  child: Text("Bottom Sheet"),
                   onPressed: () {
-                    Get.defaultDialog(
-                      title: "Dialog Title",
-                      titleStyle: TextStyle(
-                        color: Colors.purpleAccent,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
+                    Get.bottomSheet(
+                      Container(
+                        child: Wrap(
+                          children: <Widget>[
+                            ListTile(
+                              leading: Icon(Icons.wb_sunny_outlined),
+                              title: Text("Light Theme"),
+                              onTap: () => {
+                                Get.changeTheme(ThemeData.light()),
+                              },
+                            ),
+                            ListTile(
+                              leading: Icon(Icons.wb_sunny),
+                              title: Text("Dark Theme"),
+                              onTap: () => {
+                                Get.changeTheme(ThemeData.dark()),
+                              },
+                            ),
+                          ],
+                        ),
                       ),
-                      middleText: "This is dialog middle text.",
-                      middleTextStyle: TextStyle(
-                        color: Colors.red,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
+                      barrierColor: Colors.greenAccent.shade100,
+                      backgroundColor: Colors.purpleAccent,
+                      isDismissible: true,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        side: BorderSide(
+                          color: Colors.white,
+                          style: BorderStyle.solid,
+                          width: 2.0,
+                        ),
                       ),
-                      backgroundColor: Colors.orange,
-                      radius: 60,
-                      content: Row(
-                        children: [
-                          CircularProgressIndicator(),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Expanded(
-                            child: Text("Data Loading...",
-                                style: TextStyle(
-                                  color: Colors.red,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                )),
-                          ),
-                        ],
-                      ),
-                      textCancel: "Cancel",
-                      cancelTextColor: Colors.black,
-                      textConfirm: "Confirm",
-                      confirmTextColor: Colors.black,
-                      onCancel: () {},
-                      onConfirm: () {},
-                      buttonColor: Colors.greenAccent,
-                      barrierDismissible: false,
                     );
                   },
                 )
