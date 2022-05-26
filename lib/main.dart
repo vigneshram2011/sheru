@@ -1,57 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
+
+ThemeData _darkTheme = ThemeData(
+    brightness: Brightness.dark,
+    primaryColor: Colors.amber,
+    buttonTheme: const ButtonThemeData(
+      buttonColor: Colors.amber,
+      disabledColor: Colors.grey,
+    ));
+
+ThemeData _lightTheme = ThemeData(
+    brightness: Brightness.light,
+    primaryColor: Colors.blue,
+    buttonTheme: const ButtonThemeData(
+      buttonColor: Colors.blue,
+      disabledColor: Colors.grey,
+    ));
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: "Bottom Sheet",
+      theme: _lightTheme,
+      darkTheme: _darkTheme,
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-          body: Center(
-        child: Column(
-          children: [
-            ElevatedButton(
-              child: Text("Change Theme"),
-              onPressed: () {
-                Get.bottomSheet(
-                  Container(
-                    child: Wrap(
-                      children: <Widget>[
-                        ListTile(
-                          leading: Icon(Icons.wb_sunny_outlined),
-                          title: Text("Light Theme"),
-                          onTap: () => {
-                            Get.changeTheme(ThemeData.light()),
-                          },
-                        ),
-                        ListTile(
-                          leading: Icon(Icons.wb_sunny),
-                          title: Text("Dark Theme"),
-                          onTap: () => {
-                            Get.changeTheme(ThemeData.dark()),
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
-                  barrierColor: Colors.greenAccent.shade100,
-                  backgroundColor: Colors.purpleAccent,
-                  isDismissible: true,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                      side: BorderSide(
-                        color: Colors.white,
-                        style: BorderStyle.solid,
-                        width: 2.0,
-                      )),
-                );
-              },
-            ),
-          ],
+        appBar: AppBar(
+          title: Text('Dark Mode Demo'),
         ),
-      )),
+        body: Container(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Switch(
+                    value: true,
+                    onChanged: (val) {
+                      Get.changeThemeMode(
+                        Get.isDarkMode ? ThemeMode.light : ThemeMode.dark,
+                      );
+                    },
+                  )
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
