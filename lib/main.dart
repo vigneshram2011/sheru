@@ -27,7 +27,10 @@ class MyApp extends StatelessWidget {
                     Home(),
                     fullscreenDialog: true,
                     transition: Transition.zoom,
+                    duration: Duration(milliseconds: 3000),
+                    curve: Curves.bounceInOut,
                   );
+                  
                 },
               ),
             ],
