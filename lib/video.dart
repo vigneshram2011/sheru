@@ -4,11 +4,6 @@ import 'package:video_player/video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-void main() => runApp(MaterialApp(
-      title: 'PDF Viewer',
-      home: VideoApp(),
-    ));
-
 class VideoApp extends StatefulWidget {
   @override
   _VideoAppState createState() => _VideoAppState();
@@ -35,6 +30,12 @@ class _VideoAppState extends State<VideoApp> {
           title: Text("Video Player"),
           backgroundColor: Colors.green,
           centerTitle: true,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Get.back();
+            },
+          ),
         ),
         body: Center(
           child: _controller.value.isInitialized

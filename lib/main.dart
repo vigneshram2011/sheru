@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'home.dart';
+import 'pdf.dart';
 import 'video.dart';
 
 void main() => runApp(MyApp());
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
                 ),
                 onPressed: () {
                   Get.to(
-                    HomePage(),
+                    PDF(),
                   );
                 },
               ),
