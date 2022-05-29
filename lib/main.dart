@@ -22,18 +22,23 @@ class MyApp extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ElevatedButton(
-                child: Text("Go to PDF Viewer"),
+                child: Text(
+                  "Go to PDF Viewer",
+                ),
                 onPressed: () {
                   Get.to(
                     Home(),
                   );
                 },
               ),
+              ListTile(),
               ElevatedButton(
-                child: Text("Go to Video Player"),
+                child: Text(
+                  "Go to Video Player",
+                ),
                 onPressed: () {
                   Get.to(
-                    Video(),
+                    VideoApp(),
                   );
                 },
               ),

@@ -1,23 +1,35 @@
-// ignore_for_file: unused_import
+class VideoPlayerScreen extends StatelessWidget {
+  const VideoPlayerScreen({super.key});
 
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+  @override
+  _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
 
-class Video extends StatelessWidget {
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Create and store the VideoPlayerController. The VideoPlayerController
+    // offers several different constructors to play videos from assets, files,
+    // or the internet.
+    _controller = VideoPlayerController.network(
+      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+    );
+
+    _initializeVideoPlayerFuture = _controller.initialize();
+  }
+
+  @override
+  void dispose() {
+    // Ensure disposing of the VideoPlayerController to free up resources.
+    _controller.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Home"),
-        backgroundColor: Colors.green,
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-        ),
-      ),
-    );
+    // Complete the code in the next step.
+    return Container();
   }
 }
