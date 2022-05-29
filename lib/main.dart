@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
                 ),
                 onPressed: () {
                   Get.to(
-                    Home(),
+                    HomePage(),
                   );
                 },
               ),

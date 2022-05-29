@@ -1,9 +1,13 @@
-// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: library_private_types_in_public_api, unused_import
 
 import 'package:video_player/video_player.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-void main() => runApp(VideoApp());
+void main() => runApp(MaterialApp(
+      title: 'PDF Viewer',
+      home: VideoApp(),
+    ));
 
 class VideoApp extends StatefulWidget {
   @override
@@ -26,8 +30,12 @@ class _VideoAppState extends State<VideoApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Video Player',
       home: Scaffold(
+        appBar: AppBar(
+          title: Text("Video Player"),
+          backgroundColor: Colors.green,
+          centerTitle: true,
+        ),
         body: Center(
           child: _controller.value.isInitialized
               ? AspectRatio(
