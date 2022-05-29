@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'home.dart';
+import 'video.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,16 +22,19 @@ class MyApp extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ElevatedButton(
-                child: Text("Go to Home"),
+                child: Text("Go to PDF Viewer"),
                 onPressed: () {
                   Get.to(
                     Home(),
-                    fullscreenDialog: true,
-                    transition: Transition.zoom,
-                    duration: Duration(milliseconds: 3000),
-                    curve: Curves.bounceInOut,
                   );
-                  
+                },
+              ),
+              ElevatedButton(
+                child: Text("Go to Video Player"),
+                onPressed: () {
+                  Get.to(
+                    Video(),
+                  );
                 },
               ),
             ],
