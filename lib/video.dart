@@ -1,35 +1,61 @@
-class VideoPlayerScreen extends StatelessWidget {
-  const VideoPlayerScreen({super.key});
+// ignore_for_file: library_private_types_in_public_api
 
+import 'package:video_player/video_player.dart';
+import 'package:flutter/material.dart';
+
+void main() => runApp(VideoApp());
+
+class VideoApp extends StatefulWidget {
   @override
-  _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
+  _VideoAppState createState() => _VideoAppState();
+}
 
+class _VideoAppState extends State<VideoApp> {
+  late VideoPlayerController _controller;
 
   @override
   void initState() {
     super.initState();
-
-    // Create and store the VideoPlayerController. The VideoPlayerController
-    // offers several different constructors to play videos from assets, files,
-    // or the internet.
     _controller = VideoPlayerController.network(
-      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
-    );
-
-    _initializeVideoPlayerFuture = _controller.initialize();
-  }
-
-  @override
-  void dispose() {
-    // Ensure disposing of the VideoPlayerController to free up resources.
-    _controller.dispose();
-
-    super.dispose();
+        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4')
+      ..initialize().then((_) {
+        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+        setState(() {});
+      });
   }
 
   @override
   Widget build(BuildContext context) {
-    // Complete the code in the next step.
-    return Container();
+    return MaterialApp(
+      title: 'Video Demo',
+      home: Scaffold(
+        body: Center(
+          child: _controller.value.isInitialized
+              ? AspectRatio(
+                  aspectRatio: _controller.value.aspectRatio,
+                  child: VideoPlayer(_controller),
+                )
+              : Container(),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              _controller.value.isPlaying
+                  ? _controller.pause()
+                  : _controller.play();
+            });
+          },
+          child: Icon(
+            _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+          ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
   }
 }
