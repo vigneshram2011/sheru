@@ -27,7 +27,9 @@ class Home extends StatelessWidget {
                 "Next Screen",
                 style: TextStyle(color: Colors.white, fontSize: 18),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed('/next_screen');
+              },
             ),
             SizedBox(
               height: 8,
