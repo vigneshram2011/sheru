@@ -5,12 +5,14 @@ import 'package:get/get.dart';
 import 'home.dart';
 import 'next_screen.dart';
 import 'student.dart';
+import 'my_controller.dart';
 
 void main() => runApp(MyApp());
 
 // ignore: must_be_immutable
 class MyApp extends StatelessWidget {
   var student = Student();
+  MyController myController = Get.put(MyController());
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
             children: [
               Obx(
                 () => Text(
-                  'Name: ${student.name.value}',
+                  'Name: ${myController.student.name}',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
