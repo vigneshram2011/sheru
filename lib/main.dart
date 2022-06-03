@@ -4,16 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'home.dart';
 import 'next_screen.dart';
+import 'student.dart';
 
 void main() => runApp(MyApp());
 
 // ignore: must_be_immutable
 class MyApp extends StatelessWidget {
-  var count = 0.obs;
-  void increment() {
-    count.value++;
-  }
-
+  var student = Student();
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -31,7 +28,7 @@ class MyApp extends StatelessWidget {
             children: [
               Obx(
                 () => Text(
-                  'Count value is $count.',
+                  'Name: ${student.name.value}',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -42,9 +39,9 @@ class MyApp extends StatelessWidget {
                 height: 20,
               ),
               ElevatedButton(
-                child: Text('Increment'),
+                child: Text('Upper'),
                 onPressed: () {
-                  increment();
+                  student.name.value = student.name.value.toUpperCase();
                 },
               ),
             ],
