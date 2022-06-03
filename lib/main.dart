@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
               ElevatedButton(
                 child: Text('Upper Case'),
                 onPressed: () {
-                  student.name.value = student.name.value.toUpperCase();
+                  myController.convertToUpperCase();
                 },
               ),
               SizedBox(
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
               ElevatedButton(
                 child: Text('Lower Case'),
                 onPressed: () {
-                  student.name.value = student.name.value.toLowerCase();
+                  myController.convertToLowerCase();
                 },
               ),
             ],

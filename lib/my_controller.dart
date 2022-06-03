@@ -6,7 +6,6 @@ class MyController extends GetxController {
   void convertToUpperCase() {
     student.name.value = student.name.value.toUpperCase();
   }
-
   void convertToLowerCase() {
     student.name.value = student.name.value.toLowerCase();
   }
