@@ -39,9 +39,18 @@ class MyApp extends StatelessWidget {
                 height: 20,
               ),
               ElevatedButton(
-                child: Text('Upper'),
+                child: Text('Upper Case'),
                 onPressed: () {
                   student.name.value = student.name.value.toUpperCase();
+                },
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                child: Text('Lower Case'),
+                onPressed: () {
+                  student.name.value = student.name.value.toLowerCase();
                 },
               ),
             ],
