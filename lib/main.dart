@@ -11,13 +11,14 @@ void main() => runApp(MyApp());
 
 // ignore: must_be_immutable
 class MyApp extends StatelessWidget {
+  MyController myController = Get.put(MyController());
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'State Management',
+      title: 'Controller Lifecycle',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('State Management'),
+          title: Text('Controller Lifecycle'),
           backgroundColor: Colors.green,
           centerTitle: true,
         ),
@@ -27,7 +28,6 @@ class MyApp extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               GetBuilder<MyController>(
-                init: MyController(),
                 builder: (controller) {
                   return Text(
                     'Value: ${controller.count}',
@@ -36,15 +36,6 @@ class MyApp extends StatelessWidget {
                       color: Colors.deepPurpleAccent,
                     ),
                   );
-                },
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              ElevatedButton(
-                child: Text('Increment'),
-                onPressed: () {
-                  Get.find<MyController>().increment();
                 },
               ),
             ],
