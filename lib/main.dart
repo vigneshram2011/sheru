@@ -12,7 +12,6 @@ void main() => runApp(MyApp());
 // ignore: must_be_immutable
 class MyApp extends StatelessWidget {
   var student = Student();
-  MyController myController = Get.put(MyController());
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -28,31 +27,25 @@ class MyApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Obx(
-                () => Text(
-                  'Name: ${myController.student.name}',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              ElevatedButton(
-                child: Text('Upper Case'),
-                onPressed: () {
-                  myController.convertToUpperCase();
+              GetX<MyController>(
+                init: MyController(),
+                builder: (controller) {
+                  return Text(
+                    'Value: ${controller.count}',
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.deepPurpleAccent,
+                    ),
+                  );
                 },
               ),
               SizedBox(
                 height: 20,
               ),
               ElevatedButton(
-                child: Text('Lower Case'),
+                child: Text('Increment'),
                 onPressed: () {
-                  myController.convertToLowerCase();
+                  Get.find<MyController>().increment();
                 },
               ),
             ],
