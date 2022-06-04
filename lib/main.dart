@@ -11,7 +11,6 @@ void main() => runApp(MyApp());
 
 // ignore: must_be_immutable
 class MyApp extends StatelessWidget {
-  var student = Student();
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              GetX<MyController>(
+              GetBuilder<MyController>(
                 init: MyController(),
                 builder: (controller) {
                   return Text(
