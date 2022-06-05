@@ -15,10 +15,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Unique ID',
+      title: 'Workers',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Unique ID'),
+          title: Text('Workers'),
           backgroundColor: Colors.green,
           centerTitle: true,
         ),
@@ -27,39 +27,18 @@ class MyApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              GetBuilder<MyController>(
-                id: 'txtCount',
-                builder: (controller) {
-                  return Text(
-                    'Value: ${controller.count}',
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.deepPurpleAccent,
-                    ),
-                  );
-                },
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              GetBuilder<MyController>(
-                builder: (controller) {
-                  return Text(
-                    'Value: ${controller.count}',
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.deepPurpleAccent,
-                    ),
-                  );
-                },
-              ),
-              SizedBox(
-                height: 15,
-              ),
               ElevatedButton(
                 child: Text('Increment'),
                 onPressed: () => myController.increment(),
-              )
+              ),
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: TextField(
+                  onChanged: (val) {
+                    myController.increment();
+                  },
+                ),
+              ),
             ],
           ),
         ),
