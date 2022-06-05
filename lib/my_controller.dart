@@ -11,16 +11,4 @@ class MyController extends GetxController {
   void cleanUpTask() {
     print('Clean up task.');
   }
-
-  @override
-  void onInit() {
-    print('Init called.');
-    super.onInit();
-  }
-
-  @override
-  void onClose() {
-    print('Ready called.');
-    super.onClose();
-  }
 }

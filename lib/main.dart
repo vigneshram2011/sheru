@@ -28,6 +28,8 @@ class MyApp extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               GetBuilder<MyController>(
+                initState: (_) => myController.increment(),
+                dispose: (_) => myController.cleanUpTask(),
                 builder: (controller) {
                   return Text(
                     'Value: ${controller.count}',
