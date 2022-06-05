@@ -15,10 +15,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Controller Lifecycle',
+      title: 'Unique ID',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Controller Lifecycle'),
+          title: Text('Unique ID'),
           backgroundColor: Colors.green,
           centerTitle: true,
         ),
@@ -28,8 +28,7 @@ class MyApp extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               GetBuilder<MyController>(
-                initState: (_) => myController.increment(),
-                dispose: (_) => myController.cleanUpTask(),
+                id: 'txtCount',
                 builder: (controller) {
                   return Text(
                     'Value: ${controller.count}',
@@ -40,6 +39,27 @@ class MyApp extends StatelessWidget {
                   );
                 },
               ),
+              SizedBox(
+                height: 10,
+              ),
+              GetBuilder<MyController>(
+                builder: (controller) {
+                  return Text(
+                    'Value: ${controller.count}',
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.deepPurpleAccent,
+                    ),
+                  );
+                },
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              ElevatedButton(
+                child: Text('Increment'),
+                onPressed: () => myController.increment(),
+              )
             ],
           ),
         ),
