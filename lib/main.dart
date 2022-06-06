@@ -6,6 +6,7 @@ import 'home.dart';
 import 'next_screen.dart';
 import 'student.dart';
 import 'my_controller.dart';
+import 'messages.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,10 +16,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Workers',
+      translations: Messages(),
+      locale: Locale('en', 'US'),
+      fallbackLocale: Locale('en', 'US'),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      title: 'Internationization',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Workers'),
+          title: Text('Internationization'),
           backgroundColor: Colors.green,
           centerTitle: true,
         ),
@@ -27,17 +34,35 @@ class MyApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Text('Hello!'.tr,
+                  style: TextStyle(fontSize: 25, color: Colors.redAccent)),
+              SizedBox(height: 20,),
               ElevatedButton(
-                child: Text('Increment'),
-                onPressed: () => myController.increment(),
+                child: Text('Hindi'),
+                onPressed: () {
+                  myController.changeLanguage('hi', 'IN');
+                },
               ),
-              Padding(
-                padding: EdgeInsets.all(16.0),
-                child: TextField(
-                  onChanged: (val) {
-                    myController.increment();
-                  },
-                ),
+              SizedBox(height: 16),
+              ElevatedButton(
+                child: Text('Tamil'),
+                onPressed: () {
+                  myController.changeLanguage('ta', 'IN');
+                },
+              ),
+              SizedBox(height: 16),
+              ElevatedButton(
+                child: Text('French'),
+                onPressed: () {
+                  myController.changeLanguage('fr', 'FR');
+                },
+              ),
+              SizedBox(height: 16),
+              ElevatedButton(
+                child: Text('English'),
+                onPressed: () {
+                  myController.changeLanguage('en', 'US');
+                },
               ),
             ],
           ),

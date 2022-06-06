@@ -1,14 +1,9 @@
+import 'dart:ui';
 import 'package:get/get.dart';
 
 class MyController extends GetxController {
-  var count = 0.obs;
-  void increment() {
-    count++;
-  }
-
-  @override
-  void onInit() {
-    ever(count, (_) => print('count: $count'));
-    super.onInit();
+  void changeLanguage(var param1, var param2) {
+    var locale = Locale(param1, param2);
+    Get.updateLocale(locale);
   }
 }
