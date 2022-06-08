@@ -1,9 +1,11 @@
-import 'dart:ui';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class MyController extends GetxController {
-  void changeLanguage(var param1, var param2) {
-    var locale = Locale(param1, param2);
-    Get.updateLocale(locale);
+class MyController extends GetxController{
+  void incrementCounter() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    int counter = (prefs.getInt('counter') ?? 0) + 1;
+    print('Pressed $counter times');
+    await prefs.setInt('counter', counter);
   }
 }
