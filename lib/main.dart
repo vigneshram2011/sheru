@@ -7,20 +7,28 @@ import 'next_screen.dart';
 import 'student.dart';
 import 'my_controller.dart';
 import 'messages.dart';
+import 'service.dart';
 
-void main() => runApp(MyApp());
+Future<void> main() async {
+  await initServices();
+  runApp(MyApp());
+}
 
-// ignore: must_be_immutable
+Future<void> initServices() async {
+  print('Starting Devices...');
+  await Get.putAsync<Service>(() async => await Service());
+  print('All Services Started...');
+}
+
 class MyApp extends StatelessWidget {
-  MyController myController = Get.put(MyController(), tag: 'instance1', permanent: true);
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Dependency Injection',
+      title: 'GetX Service',
       home: Scaffold(
         appBar: AppBar(
           title: Text(
-            'Dependency Injection',
+            'GetX Service',
           ),
           backgroundColor: Colors.green,
         ),
@@ -30,9 +38,9 @@ class MyApp extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ElevatedButton(
-                child: Text('Click Me'),
+                child: Text('Increment'),
                 onPressed: () {
-                  Get.find<MyController>().incrementCounter();
+                  Get.find<Service>().incrementCounter();
                 },
               )
             ],
