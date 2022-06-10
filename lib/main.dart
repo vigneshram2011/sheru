@@ -8,27 +8,24 @@ import 'student.dart';
 import 'my_controller.dart';
 import 'messages.dart';
 import 'service.dart';
+import 'all_controller_binding.dart';
+import 'my_app_controller_binding.dart';
+import 'home_controller_binding.dart';
 
-Future<void> main() async {
-  await initServices();
+void main() {
   runApp(MyApp());
-}
-
-Future<void> initServices() async {
-  print('Starting Devices...');
-  await Get.putAsync<Service>(() async => Service());
-  print('All Services Started...');
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'GetX Service',
+      initialBinding: AllControllerBinding(),
+      title: 'Binding',
       home: Scaffold(
         appBar: AppBar(
           title: Text(
-            'GetX Service',
+            'Binding',
           ),
           backgroundColor: Colors.green,
         ),
@@ -37,12 +34,30 @@ class MyApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Obx(
+                () => Text(
+                  'Value: ${Get.find<MyController>().count}',
+                  style: TextStyle(
+                    color: Colors.redAccent,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
               ElevatedButton(
                 child: Text('Increment'),
                 onPressed: () {
-                  Get.find<Service>().incrementCounter();
+                  Get.find<MyController>().increment();
                 },
-              )
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              ElevatedButton(
+                child: Text('Home'),
+                onPressed: () {
+                  Get.to(Home());
+                },
+              ),
             ],
           ),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home_controller_binding.dart';
 import 'package:get/get.dart';
 
 class Home extends StatelessWidget {
@@ -15,32 +16,28 @@ class Home extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              "This is the home screen.",
-              style: TextStyle(color: Colors.purpleAccent, fontSize: 24),
+            Obx(
+              (() => Text(
+                    'Value: ${Get.find<HomeController>().count}',
+                    style: TextStyle(
+                      color: Colors.redAccent,
+                      fontSize: 20,
+                    ),
+                  )),
+            ),
+            ElevatedButton(
+              child: Text('Increment'),
+              onPressed: () {
+                Get.find<HomeController>().increment();
+              },
             ),
             SizedBox(
               height: 10,
             ),
             ElevatedButton(
-              child: Text(
-                "Next Screen",
-                style: TextStyle(color: Colors.white, fontSize: 18),
-              ),
+              child: Text('Back'),
               onPressed: () {
-                Get.toNamed('/next_screen');
-              },
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            ElevatedButton(
-              child: Text(
-                "Back to Main",
-                style: TextStyle(color: Colors.white, fontSize: 18),
-              ),
-              onPressed: () {
-                Get.back();
+                Get.back;
               },
             ),
           ],
