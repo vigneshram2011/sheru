@@ -66,7 +66,7 @@ class MyApp extends StatelessWidget {
               ElevatedButton(
                 child: Text('Home'),
                 onPressed: () {
-                  Get.toNamed('/home');
+                  Get.to(Home(), binding: HomeControllerBinding());
                 },
               ),
             ],

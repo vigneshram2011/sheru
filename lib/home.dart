@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:sheru/main.dart';
 import 'home_controller.dart';
 import 'home_controller_binding.dart';
 import 'package:get/get.dart';
@@ -43,7 +44,7 @@ class Home extends StatelessWidget {
             ElevatedButton(
               child: Text('Back'),
               onPressed: () {
-                Get.back;
+                Get.back();
               },
             ),
           ],
