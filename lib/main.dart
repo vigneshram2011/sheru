@@ -11,8 +11,10 @@ import 'service.dart';
 import 'all_controller_binding.dart';
 import 'my_app_controller_binding.dart';
 import 'home_controller_binding.dart';
+import 'home_controller.dart';
 
 void main() {
+  MyAppControllerBinding().dependencies();
   runApp(MyApp());
 }
 
@@ -20,8 +22,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialBinding: AllControllerBinding(),
       title: 'Binding',
+      getPages: [
+        GetPage(
+            name: '/home',
+            page: () => Home(),
+            binding: BindingsBuilder(() => Get.lazyPut<HomeControllerBinding>(
+                () => HomeControllerBinding()))),
+      ],
       home: Scaffold(
         appBar: AppBar(
           title: Text(
@@ -43,6 +51,9 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 5,
+              ),
               ElevatedButton(
                 child: Text('Increment'),
                 onPressed: () {
@@ -55,7 +66,7 @@ class MyApp extends StatelessWidget {
               ElevatedButton(
                 child: Text('Home'),
                 onPressed: () {
-                  Get.to(Home());
+                  Get.toNamed('/home');
                 },
               ),
             ],

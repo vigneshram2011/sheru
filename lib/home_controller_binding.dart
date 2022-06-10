@@ -1,8 +1,9 @@
+import 'home_controller.dart';
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
-  var count = 0.obs;
-  void increment() {
-    count++;
+class HomeControllerBinding implements Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<HomeController>(() => HomeController());
   }
 }

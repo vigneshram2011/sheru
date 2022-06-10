@@ -1,4 +1,7 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
+import 'home_controller.dart';
 import 'home_controller_binding.dart';
 import 'package:get/get.dart';
 
@@ -24,6 +27,9 @@ class Home extends StatelessWidget {
                       fontSize: 20,
                     ),
                   )),
+            ),
+            SizedBox(
+              height: 5,
             ),
             ElevatedButton(
               child: Text('Increment'),
