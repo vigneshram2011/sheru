@@ -1,74 +1,87 @@
-// ignore_for_file: unused_import
+// ignore_for_file: unused_import, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'home.dart';
-import 'next_screen.dart';
-import 'student.dart';
-import 'my_controller.dart';
-import 'messages.dart';
-import 'service.dart';
-import 'all_controller_binding.dart';
-import 'my_app_controller_binding.dart';
-import 'home_controller_binding.dart';
-import 'home_controller.dart';
+import 'package:get_storage/get_storage.dart';
 
-void main() {
-  MyAppControllerBinding().dependencies();
+Future<void> main() async {
+  await GetStorage.init();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  var emailEditingController = TextEditingController();
+  var storage = GetStorage();
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Binding',
-      getPages: [
-        GetPage(
-            name: '/home',
-            page: () => Home(),
-            binding: BindingsBuilder(() => Get.lazyPut<HomeControllerBinding>(
-                () => HomeControllerBinding()))),
-      ],
+      title: 'Get Storage & Email Validation',
       home: Scaffold(
+        backgroundColor: Colors.pink[50],
         appBar: AppBar(
           title: Text(
-            'Binding',
+            'Get Storage & Email Validation',
           ),
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.purple,
         ),
         body: Center(
-          child: Column(
+          child: Column(   
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Obx(
-                () => Text(
-                  'Value: ${Get.find<MyController>().count}',
-                  style: TextStyle(
-                    color: Colors.redAccent,
-                    fontSize: 20,
-                  ),
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: TextField(
+                  controller: emailEditingController,
                 ),
               ),
               SizedBox(
-                height: 5,
+                height: 8,
               ),
-              ElevatedButton(
-                child: Text('Increment'),
-                onPressed: () {
-                  Get.find<MyController>().increment();
-                },
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: ElevatedButton(
+                  child: Text('Write Email'),
+                  onPressed: () {
+                    if (GetUtils.isEmail(emailEditingController.text)) {
+                      storage.write('email', emailEditingController.text);
+                      Get.snackbar(
+                        'Success',
+                        'See Console for Email',
+                        backgroundColor: Colors.black,
+                        colorText: Colors.greenAccent,
+                        snackPosition: SnackPosition.TOP,
+                        forwardAnimationCurve: Curves.bounceInOut,
+                        reverseAnimationCurve: Curves.bounceInOut,
+                        animationDuration: Duration(seconds: 2),
+                        duration: Duration(seconds: 5),
+                      );
+                    } else {
+                      Get.snackbar(
+                        'Error',
+                        'Provide Email in Valid Format.',
+                        backgroundColor: Colors.yellowAccent,
+                        colorText: Colors.red,
+                        snackPosition: SnackPosition.TOP,
+                        forwardAnimationCurve: Curves.bounceInOut,
+                        reverseAnimationCurve: Curves.bounceInOut,
+                        animationDuration: Duration(seconds: 2),
+                        duration: Duration(seconds: 5),
+                      );
+                    }
+                  },
+                ),
               ),
               SizedBox(
-                height: 10,
+                height: 8,
               ),
               ElevatedButton(
-                child: Text('Home'),
+                child: Text('Read Email'),
                 onPressed: () {
-                  Get.to(Home(), binding: HomeControllerBinding());
+                  print('Email: ${storage.read('email')}');
                 },
-              ),
+              )
             ],
           ),
         ),
