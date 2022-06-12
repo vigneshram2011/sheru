@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sheru/dashboard.dart';
 import 'home.dart';
 import 'package:get_storage/get_storage.dart';
 import 'count_controller.dart';
@@ -45,7 +46,8 @@ class MyApp extends GetView<CountController> {
                   print(controller.hashCode);
                   controller.increment();
                 },
-              )
+              ),
+              Dashboard(),
             ],
           ),
         ),
