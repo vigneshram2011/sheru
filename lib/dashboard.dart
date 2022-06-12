@@ -6,11 +6,38 @@ class Dashboard extends GetResponsiveView<CountController> {
   Dashboard() : super(alwaysUseBuilder: false);
 
   @override
-  Widget phone() => Icon(Icons.phone_iphone_rounded, size: 75);
+  Widget phone() {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Get View',
+        ),
+        backgroundColor: Colors.green,
+      ),
+    );
+  }
 
   @override
-  Widget tablet() => Icon(Icons.tablet, size: 125);
+  Widget tablet() {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Get View',
+        ),
+        backgroundColor: Colors.blue,
+      ),
+    );
+  }
 
   @override
-  Widget desktop() => Icon(Icons.desktop_mac, size: 175);
+  Widget desktop() {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Get View',
+        ),
+        backgroundColor: Colors.orange,
+      ),
+    );
+  }
 }
