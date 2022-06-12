@@ -12,10 +12,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Sheru Mail',
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Sheru Mail'),
-          backgroundColor: Colors.green,
-        ),
+        body: Dashboard(),
       ),
     );
   }
