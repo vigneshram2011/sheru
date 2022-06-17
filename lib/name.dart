@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'splash.dart';
 import 'username.dart';
 import 'code.dart';
-import 'name.dart';
 import 'birthday.dart';
 import 'address.dart';
 import 'ssn.dart';
+import 'main.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class Name extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
