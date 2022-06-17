@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
+import 'package:login_get_cli_app/app/routes/app_pages.dart';
 import '../controllers/address_controller.dart';
 
 class AddressView extends GetView<AddressController> {
@@ -13,10 +12,20 @@ class AddressView extends GetView<AddressController> {
         title: Text('AddressView'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text(
-          'AddressView is working',
-          style: TextStyle(fontSize: 20),
+     body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Text(
+              'Hello World.',
+              style: TextStyle(fontSize: 20),
+            ),
+            ElevatedButton(
+              child: const Text('Signup'),
+              onPressed: () => Get.toNamed(Routes.SSN),
+            ),
+          ],
         ),
       ),
     );

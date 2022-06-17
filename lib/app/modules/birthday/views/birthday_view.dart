@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
+import 'package:login_get_cli_app/app/routes/app_pages.dart';
 import '../controllers/birthday_controller.dart';
 
 class BirthdayView extends GetView<BirthdayController> {
@@ -14,9 +13,19 @@ class BirthdayView extends GetView<BirthdayController> {
         centerTitle: true,
       ),
       body: Center(
-        child: Text(
-          'BirthdayView is working',
-          style: TextStyle(fontSize: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Text(
+              'Hello World.',
+              style: TextStyle(fontSize: 20),
+            ),
+            ElevatedButton(
+              child: const Text('Continue'),
+              onPressed: () => Get.toNamed(Routes.ADDRESS),
+            ),
+          ],
         ),
       ),
     );

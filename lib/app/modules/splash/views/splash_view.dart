@@ -11,22 +11,25 @@ class SplashView extends GetView<SplashController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SplashView'),
+        title: const Text('SplashView'),
         centerTitle: true,
       ),
       body: Center(
-          child: Column(
-        children: [
-          const Text(
-            'Hello World.',
-            style: TextStyle(fontSize: 20),
-          ),
-          ElevatedButton(
-            child: const Text('Go to Code Screen'),
-            onPressed: () => Get.to(Routes.CODE),
-          ),
-        ],
-      )),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Text(
+              'Hello World.',
+              style: TextStyle(fontSize: 20),
+            ),
+            ElevatedButton(
+              child: const Text('Signup'),
+              onPressed: () => Get.toNamed(Routes.USERNAME),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
