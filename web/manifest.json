@@ -1,6 +1,6 @@
 {
-    "name": "sheru",
-    "short_name": "sheru",
+    "name": "login_get_cli_app",
+    "short_name": "login_get_cli_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

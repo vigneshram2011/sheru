@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.vignesh.sheru" "\0"
-            VALUE "FileDescription", "sheru" "\0"
+            VALUE "CompanyName", "sheru.com" "\0"
+            VALUE "FileDescription", "login_get_cli_app" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "sheru" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2022 com.vignesh.sheru. All rights reserved." "\0"
-            VALUE "OriginalFilename", "sheru.exe" "\0"
-            VALUE "ProductName", "sheru" "\0"
+            VALUE "InternalName", "login_get_cli_app" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2022 sheru.com. All rights reserved." "\0"
+            VALUE "OriginalFilename", "login_get_cli_app.exe" "\0"
+            VALUE "ProductName", "login_get_cli_app" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
