@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
 import '../controllers/ssn_controller.dart';
 
 class SsnView extends GetView<SsnController> {
@@ -10,7 +8,7 @@ class SsnView extends GetView<SsnController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SsnView'),
+        title: Text('Hello World.'),
         centerTitle: true,
       ),
       body: Center(

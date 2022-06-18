@@ -1,7 +1,8 @@
 import 'package:get/get.dart';
-
+import 'package:login_get_cli_app/app/modules/birthday/views/birthday_view.dart';
 import '../modules/address/bindings/address_binding.dart';
 import '../modules/address/views/address_view.dart';
+import '../modules/birthday/bindings/birthday_binding.dart';
 import '../modules/code/bindings/code_binding.dart';
 import '../modules/code/views/code_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -47,6 +48,11 @@ class AppPages {
       name: _Paths.NAME,
       page: () => const NameView(),
       binding: NameBinding(),
+    ),
+    GetPage(
+      name: _Paths.BIRTHDAY,
+      page: () => const BirthdayView(),
+      binding: BirthdayBinding(),
     ),
     GetPage(
       name: _Paths.ADDRESS,
