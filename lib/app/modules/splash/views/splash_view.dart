@@ -21,7 +21,7 @@ class SplashView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset(''),
+              Image.asset('assets/images/flight.gif'),
               const Text(
                 'Flight, the BEST Kids Investing App Around!',
                 style: TextStyle(color: Colors.indigo, fontSize: 20),
@@ -47,7 +47,7 @@ class SecondScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset(''),
+              Image.asset('assets/images/easy_fast_effective.gif'),
               const Text(
                 'Easy, Fast, and Effective!',
                 style: TextStyle(color: Colors.indigo, fontSize: 20),
