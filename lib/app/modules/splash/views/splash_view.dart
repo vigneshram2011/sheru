@@ -73,7 +73,7 @@ class ThirdScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset(''),
+                Image.asset('assets/images/new_features.gif'),
                 const Text(
                   'More Than a Hundred New Features Available!',
                   style: TextStyle(color: Colors.indigo, fontSize: 20),
@@ -98,7 +98,7 @@ class FourthScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset(''),
+                Image.asset('assets/images/invest_tracking.gif'),
                 const Text(
                   'Clear and Understandable Investing Tracking!',
                   style: TextStyle(color: Colors.indigo, fontSize: 20),
@@ -123,7 +123,7 @@ class FifthScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset(''),
+                Image.asset('assets/images/get_started.gif'),
                 const Text(
                   'Your Exciting Journey Starts Now!!!',
                   style: TextStyle(color: Colors.indigo, fontSize: 20),
