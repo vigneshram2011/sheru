@@ -22,7 +22,7 @@ class AddressView extends GetView<AddressController> {
               style: TextStyle(fontSize: 20),
             ),
             ElevatedButton(
-              child: const Text('Signup'),
+              child: const Text('Continue'),
               onPressed: () => Get.toNamed(Routes.SSN),
             ),
           ],
