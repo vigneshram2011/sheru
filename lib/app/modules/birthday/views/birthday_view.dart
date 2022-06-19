@@ -7,19 +7,22 @@ class BirthdayView extends GetView<BirthdayController> {
   const BirthdayView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
-        title: Text('BirthdayView'),
+        title: const Text('Date of Birth'),
+        backgroundColor: Colors.orange,
         centerTitle: true,
       ),
+      backgroundColor: Colors.greenAccent,
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text(
-              'Hello World.',
-              style: TextStyle(fontSize: 20),
+            
+            const SizedBox(
+              height: 20,
             ),
             ElevatedButton(
               child: const Text('Continue'),

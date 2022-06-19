@@ -18,17 +18,26 @@ class SplashView extends StatelessWidget {
         home: AnimatedSplashScreen(
           duration: 6000,
           splash: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset('assets/images/flight.gif'),
-              const Text(
-                'Flight, the BEST Kids Investing App Around!',
-                style: TextStyle(color: Colors.indigo, fontSize: 20),
-              ),
-            ],
-          ),
-          nextScreen: const SecondScreen(),
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset('assets/images/flight.gif'),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  'Flight, the BEST Kids Investing App Around!',
+                  style: TextStyle(color: Colors.indigo, fontSize: 20),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                ElevatedButton(
+                  child: const Text('Signup'),
+                  onPressed: () => Get.toNamed(Routes.USERNAME),
+                ),
+              ]),
+          nextScreen: const UsernameView(),
           splashTransition: SplashTransition.slideTransition,
           backgroundColor: Colors.white,
         ));
@@ -48,9 +57,19 @@ class SecondScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset('assets/images/easy_fast_effective.gif'),
+              const SizedBox(
+                height: 20,
+              ),
               const Text(
                 'Easy, Fast, and Effective!',
                 style: TextStyle(color: Colors.indigo, fontSize: 20),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              ElevatedButton(
+                child: const Text('Signup'),
+                onPressed: () => Get.toNamed(Routes.USERNAME),
               ),
             ],
           ),
@@ -74,9 +93,19 @@ class ThirdScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset('assets/images/new_features.gif'),
+                const SizedBox(
+                  height: 20,
+                ),
                 const Text(
                   'More Than a Hundred New Features Available!',
                   style: TextStyle(color: Colors.indigo, fontSize: 20),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                ElevatedButton(
+                  child: const Text('Signup'),
+                  onPressed: () => Get.toNamed(Routes.USERNAME),
                 ),
               ],
             ),
@@ -99,9 +128,19 @@ class FourthScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset('assets/images/invest_tracking.gif'),
+                const SizedBox(
+                  height: 20,
+                ),
                 const Text(
-                  'Clear and Understandable Investing Tracking!',
+                  'Clear and Understandable Investment Tracking!',
                   style: TextStyle(color: Colors.indigo, fontSize: 20),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                ElevatedButton(
+                  child: const Text('Signup'),
+                  onPressed: () => Get.toNamed(Routes.USERNAME),
                 ),
               ],
             ),
@@ -124,13 +163,23 @@ class FifthScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset('assets/images/get_started.gif'),
+                const SizedBox(
+                  height: 20,
+                ),
                 const Text(
                   'Your Exciting Journey Starts Now!!!',
                   style: TextStyle(color: Colors.indigo, fontSize: 20),
                 ),
+                const SizedBox(
+                  height: 10,
+                ),
+                ElevatedButton(
+                  child: const Text('Signup'),
+                  onPressed: () => Get.toNamed(Routes.USERNAME),
+                ),
               ],
             ),
-            nextScreen: const UsernameView(),
+            nextScreen: const SplashView(),
             splashTransition: SplashTransition.slideTransition,
             pageTransitionType: PageTransitionType.leftToRightWithFade,
             backgroundColor: Colors.white));
