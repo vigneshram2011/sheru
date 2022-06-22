@@ -2,12 +2,64 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:login_get_cli_app/app/modules/splash/views/liquid_swipe.dart';
 import 'package:login_get_cli_app/app/modules/username/views/username_view.dart';
 import 'package:login_get_cli_app/app/routes/app_pages.dart';
 import '../controllers/splash_controller.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'dart:math';
+
+final pages = [
+  Container(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Image.asset('assets/images/flight.gif'),
+        const Text('Flight, the Next Best Kids Investing App!', style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
+      ],
+    ),
+  ),
+  Container(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Image.asset('assets/images/easy_fast_effective.gif'),
+        const Text('Easy, Fast and Effective!', style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
+      ],
+    ),
+  ),
+  Container(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Image.asset('assets/images/new_features.gif'),
+        const Text('More Than a Hundred New Features Available!', style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
+      ],
+    ),
+  ),
+  Container(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Image.asset('assets/images/invest_tracking.gif'),
+        const Text('Clear and Understandable Investment Tracking!', style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
+      ],
+    ),
+  ),
+  Container(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Image.asset('assets/images/get_started.gif'),
+        const Text('Your Exciting Journey Starts Now!', style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
+      ],
+    ),
+  ),
+];
 
 class SplashView extends StatelessWidget {
   const SplashView({Key? key}) : super(key: key);
@@ -15,12 +67,7 @@ class SplashView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: LiquidSwipe(
-        pages: liquidPages,
-        fullTransitionValue: 300,
-        enableLoop: true,
-        slideIconWidget: const Icon(Icons.arrow_back),
-        positionSlideIcon: 0.8,
-        waveType: WaveType.circularReveal,
+        pages: pages,
       ),
     );
   }
