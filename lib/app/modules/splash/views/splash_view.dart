@@ -9,55 +9,45 @@ import 'package:liquid_swipe/liquid_swipe.dart';
 import 'dart:math';
 
 final pages = [
-  Container(
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Image.asset('assets/images/flight.gif'),
-        const Text('Flight, the Next Best Kids Investing App!', style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
-      ],
-    ),
+  Column(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      Image.asset('assets/images/flight.gif'),
+      const Text('Flight, the Next Best Kids Investing App!', style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
+    ],
   ),
-  Container(
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Image.asset('assets/images/easy_fast_effective.gif'),
-        const Text('Easy, Fast and Effective!', style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
-      ],
-    ),
+  Column(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      Image.asset('assets/images/easy_fast_effective.gif'),
+      const Text('Easy, Fast and Effective!', style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
+    ],
   ),
-  Container(
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Image.asset('assets/images/new_features.gif'),
-        const Text('More Than a Hundred New Features Available!', style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
-      ],
-    ),
+  Column(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      Image.asset('assets/images/new_features.gif'),
+      const Text('More Than a Hundred New Features Available!', style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
+    ],
   ),
-  Container(
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Image.asset('assets/images/invest_tracking.gif'),
-        const Text('Clear and Understandable Investment Tracking!', style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
-      ],
-    ),
+  Column(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      Image.asset('assets/images/invest_tracking.gif'),
+      const Text('Clear and Understandable Investment Tracking!', style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
+    ],
   ),
-  Container(
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Image.asset('assets/images/get_started.gif'),
-        const Text('Your Exciting Journey Starts Now!', style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
-      ],
-    ),
+  Column(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      Image.asset('assets/images/get_started.gif'),
+      const Text('Your Exciting Journey Starts Now!', style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
+    ],
   ),
 ];
 

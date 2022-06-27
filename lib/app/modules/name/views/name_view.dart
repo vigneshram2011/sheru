@@ -11,7 +11,7 @@ class NameView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Name Screen'),
+        title: const Text('Let Us Get to Know Your Name!'),
         backgroundColor: Colors.orange,
         centerTitle: true,
       ),
