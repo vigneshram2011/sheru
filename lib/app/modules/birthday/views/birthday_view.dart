@@ -7,7 +7,6 @@ class BirthdayView extends GetView<BirthdayController> {
   const BirthdayView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         title: const Text('Date of Birth'),
