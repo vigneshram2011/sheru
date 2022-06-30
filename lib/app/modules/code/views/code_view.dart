@@ -21,8 +21,16 @@ class CodeView extends GetView<CodeController> {
               'Please enter the code which was sent to you via email.',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
+            const SizedBox(height: 20),
+            const Padding(
+              padding: EdgeInsets.all(8),
+              child: TextField(
+                decoration: InputDecoration(
+                  labelText: 'Code',
+                ),
+              ),
+            ),
             const SizedBox(height: 10),
-            
             ElevatedButton(
               child: const Text('Continue'),
               onPressed: () => Get.toNamed(Routes.NAME),
