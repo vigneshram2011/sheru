@@ -19,7 +19,6 @@ class BirthdayView extends GetView<BirthdayController> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            
             const SizedBox(
               height: 20,
             ),

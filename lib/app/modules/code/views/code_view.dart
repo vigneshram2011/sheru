@@ -9,7 +9,7 @@ class CodeView extends GetView<CodeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('CodeView'),
+        title: const Text('Code'),
         centerTitle: true,
       ),
       body: Center(
@@ -18,9 +18,11 @@ class CodeView extends GetView<CodeController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text(
-              'Hello World.',
-              style: TextStyle(fontSize: 20),
+              'Please enter the code which was sent to you via email.',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
+            const SizedBox(height: 10),
+            
             ElevatedButton(
               child: const Text('Continue'),
               onPressed: () => Get.toNamed(Routes.NAME),
