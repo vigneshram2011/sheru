@@ -19,8 +19,17 @@ class BirthdayView extends GetView<BirthdayController> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const SizedBox(height: 20),
+            const Padding(
+              padding: EdgeInsets.all(8),
+              child: TextField(
+                decoration: InputDecoration(
+                  labelText: 'Date Of Birth',
+                ),
+              ),
+            ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             ElevatedButton(
               child: const Text('Continue'),
