@@ -10,8 +10,10 @@ class CodeView extends GetView<CodeController> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Code'),
+        backgroundColor: Colors.orange,
         centerTitle: true,
       ),
+      backgroundColor: Colors.greenAccent,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

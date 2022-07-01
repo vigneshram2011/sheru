@@ -9,10 +9,12 @@ class AddressView extends GetView<AddressController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('AddressView'),
+        title: const Text('Your Address'),
+        backgroundColor: Colors.orange,
         centerTitle: true,
       ),
-     body: Center(
+      backgroundColor: Colors.greenAccent,
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

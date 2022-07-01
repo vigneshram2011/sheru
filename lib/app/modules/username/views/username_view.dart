@@ -9,9 +9,11 @@ class UsernameView extends GetView<UsernameController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('UsernameView'),
+        title: const Text('Username'),
+        backgroundColor: Colors.orange,
         centerTitle: true,
       ),
+      backgroundColor: Colors.greenAccent,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
