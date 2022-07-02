@@ -28,7 +28,11 @@ final pages = [
     children: [
       Image.asset('assets/images/easy_fast_effective.gif'),
       const Text('Easy, Fast and Effective!',
-          style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
+          style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24)),
+      ElevatedButton(
+        child: const Text('Sign Up'),
+        onPressed: () => Get.toNamed(Routes.USERNAME),
+      ),
     ],
   ),
   Column(
@@ -37,7 +41,11 @@ final pages = [
     children: [
       Image.asset('assets/images/new_features.gif'),
       const Text('More Than a Hundred New Features Available!',
-          style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
+          style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24)),
+      ElevatedButton(
+        child: const Text('Sign Up'),
+        onPressed: () => Get.toNamed(Routes.USERNAME),
+      ),
     ],
   ),
   Column(
@@ -46,7 +54,11 @@ final pages = [
     children: [
       Image.asset('assets/images/invest_tracking.gif'),
       const Text('Clear and Understandable Investment Tracking!',
-          style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
+          style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24)),
+      ElevatedButton(
+        child: const Text('Sign Up'),
+        onPressed: () => Get.toNamed(Routes.USERNAME),
+      ),
     ],
   ),
   Column(
@@ -55,7 +67,11 @@ final pages = [
     children: [
       Image.asset('assets/images/get_started.gif'),
       const Text('Your Exciting Journey Starts Now!',
-          style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24))
+          style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 24)),
+      ElevatedButton(
+        child: const Text('Sign Up'),
+        onPressed: () => Get.toNamed(Routes.USERNAME),
+      ),
     ],
   ),
 ];
