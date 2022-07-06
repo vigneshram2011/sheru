@@ -20,14 +20,15 @@ class BirthdayView extends GetView<BirthdayController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 20),
-            const Padding(
-              padding: EdgeInsets.all(8),
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: 'Date Of Birth',
-                ),
-              ),
-            ),
+            GestureDetector(
+                child: const Icon(Icons.calendar_today, size: 400),
+                onTap: () async {
+                  await showDatePicker(
+                      context: context,
+                      initialDate: DateTime.now(),
+                      firstDate: DateTime(1900),
+                      lastDate: DateTime(2100));
+                }),
             const SizedBox(
               height: 10,
             ),
