@@ -19,10 +19,6 @@ class AddressView extends GetView<AddressController> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text(
-              'Hello World.',
-              style: TextStyle(fontSize: 20),
-            ),
             ElevatedButton(
               child: const Text('Continue'),
               onPressed: () => Get.toNamed(Routes.SSN),
