@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:get/get.dart';
 import 'package:login_get_cli_app/app/modules/birthday/views/birthday_view.dart';
 import '../modules/address/bindings/address_binding.dart';
