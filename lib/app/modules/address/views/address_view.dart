@@ -16,9 +16,19 @@ class AddressView extends GetView<AddressController> {
       backgroundColor: Colors.greenAccent,
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const SizedBox(height: 30),
+            const Padding(
+              padding: EdgeInsets.all(8),
+              child: TextField(
+                decoration: InputDecoration(
+                  labelText: 'Enter Your Address Here!',
+                ),
+              ),
+            ),
+            const SizedBox(height: 30),
             ElevatedButton(
               child: const Text('Continue'),
               onPressed: () => Get.toNamed(Routes.SSN),
@@ -29,3 +39,4 @@ class AddressView extends GetView<AddressController> {
     );
   }
 }
+
