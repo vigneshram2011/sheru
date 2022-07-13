@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:login_get_cli_app/app/routes/app_pages.dart';
@@ -11,7 +13,7 @@ const googleApiKey = 'AIzaSyARq3lIWaDnlepdOd2alXdFzuTcd-PyGdY';
 Prediction? p = await PlacesAutocomplete.show(
                           context: context,
                           apiKey: googleApiKey,
-                          mode: Mode.overlay, // Mode.fullscreen
+                          mode: Mode.overlay,
                           language: "en",
                           components: [Component(Component.country, "au")]);
 
