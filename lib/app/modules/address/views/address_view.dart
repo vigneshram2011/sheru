@@ -1,5 +1,6 @@
-import 'dart:js';
+// ignore_for_file: avoid_web_libraries_in_flutter, unused_import, depend_on_referenced_packages
 
+import 'dart:js';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:login_get_cli_app/app/routes/app_pages.dart';
@@ -40,7 +41,9 @@ class AddressView extends GetView<AddressController> {
                 decoration: InputDecoration(
                   labelText: 'Enter Your Address Here!',
                 ),
-                onChanged: (){},
+                onChanged: (){
+                  
+                },
               ),
             ),
             const SizedBox(height: 30),
