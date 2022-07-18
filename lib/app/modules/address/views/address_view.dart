@@ -4,19 +4,12 @@ import 'dart:js';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:login_get_cli_app/app/routes/app_pages.dart';
-import '../controllers/address_controller.dart';
 import 'package:google_api_headers/google_api_headers.dart';
 import 'package:flutter_google_places/flutter_google_places.dart';
 import 'package:google_maps_webservice/places.dart';
+import '../controllers/address_controller.dart';
 
 const googleApiKey = 'AIzaSyARq3lIWaDnlepdOd2alXdFzuTcd-PyGdY';
-
-Prediction? p = await PlacesAutocomplete.show(
-                          context: context,
-                          apiKey: googleApiKey,
-                          mode: Mode.overlay,
-                          language: "en",
-                          components: [Component(Component.country, "au")]);
 
 class AddressView extends GetView<AddressController> {
   const AddressView({Key? key}) : super(key: key);
@@ -35,14 +28,25 @@ class AddressView extends GetView<AddressController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 30),
-            const Padding(
-              padding: EdgeInsets.all(8),
+            Padding(
+              padding: const EdgeInsets.all(8),
               child: TextField(
-                decoration: InputDecoration(
-                  labelText: 'Enter Your Address Here!',
-                ),
-                onChanged: (){
-                  
+                onTap: () async {
+                  Prediction? p = await PlacesAutocomplete.show(
+                      context: context,
+                      apiKey: googleApiKey,
+                      mode: Mode.overlay,
+                      language: "en",
+                      decoration: InputDecoration(
+                        hintText: 'Enter Your Address Here...',
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: const BorderSide(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      components: [Component(Component.country, "au")]);
                 },
               ),
             ),
@@ -57,4 +61,3 @@ class AddressView extends GetView<AddressController> {
     );
   }
 }
-
