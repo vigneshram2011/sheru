@@ -24,7 +24,7 @@ class AppPages {
   AppPages._();
 
   // static const INITIAL = Routes.SPLASH;
-  static const INITIAL = Routes.ADDRESS;
+  static const INITIAL = Routes.CODE;
 
   static final routes = [
     GetPage(

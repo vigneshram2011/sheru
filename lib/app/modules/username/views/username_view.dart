@@ -39,7 +39,6 @@ class UsernameView extends GetView<UsernameController> {
                 obscureText: true,
                 decoration: InputDecoration(
                   labelText: 'Password',
-                  
                 ),
               ),
             ),
