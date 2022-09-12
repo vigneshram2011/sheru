@@ -1,0 +1,43 @@
+
+:root {
+    --colorPrimaryBlack: #000000;    
+    --colorPrimaryWhite: #ffffff;    
+    --colorPrimaryDarkYellow: #fcc921;    
+    --colorPrimaryOrange: #ffaf03;    
+    --colorSecondaryPurple: #800080;    
+    --colorSecondarySunnyYellow: #fed426;    
+    --colorSecondaryDarkBlue: #00008b;    
+    --colorSecondarySkyblue: #87ceeb;    
+    --colorStatesPrimaryBlack100: #000000;    
+    --colorStatesPrimaryBlack75: #000000bf;    
+    --colorStatesPrimaryBlack50: #50505080;    
+    --colorStatesPrimaryBlack25: #00000040;    
+    --colorStatesPrimaryWhite100: #ffffff;    
+    --colorStatesPrimaryWhite75: #ffffffbf;    
+    --colorStatesPrimaryWhite50: #ffffff80;    
+    --colorStatesPrimaryWhite25: #ffffff40;    
+    --colorStatesPrimaryDarkYellow100: #fcc921;    
+    --colorStatesPrimaryDarkYellow75: #fcc921bf;    
+    --colorStatesPrimaryDarkYellow50: #fcc92180;    
+    --colorStatesPrimaryDarkYellow25: #fcc92140;    
+    --colorStatesPrimaryOrange100: #ffaf03;    
+    --colorStatesPrimaryOrange75: #ffaf03bf;    
+    --colorStatesPrimaryOrange50: #ffaf0380;    
+    --colorStatesPrimaryOrange25: #ffaf0340;    
+    --colorStatesSecondaryPurple100: #800080;    
+    --colorStatesSecondaryPurple75: #800080bf;    
+    --colorStatesSecondaryPurple50: #80008080;    
+    --colorStatesSecondaryPurple25: #80008040;    
+    --colorStatesSecondarySunnyYellow100: #fed426;    
+    --colorStatesSecondarySunnyYellow75: #fed426bf;    
+    --colorStatesSecondarySunnyYellow50: #fed42680;    
+    --colorStatesSecondarySunnyYellow25: #fed42640;    
+    --colorStatesSecondaryDarkBlue100: #00008b;    
+    --colorStatesSecondaryDarkBlue75: #00008bbf;    
+    --colorStatesSecondaryDarkBlue50: #00008b80;    
+    --colorStatesSecondaryDarkBlue25: #00008b40;    
+    --colorStatesSecondarySkyblue100: #87ceeb;    
+    --colorStatesSecondarySkyblue75: #87ceebbf;    
+    --colorStatesSecondarySkyblue50: #87ceeb80;    
+    --colorStatesSecondarySkyblue25: #87ceeb40;    
+}
